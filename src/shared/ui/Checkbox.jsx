@@ -1,7 +1,6 @@
 import { CheckIcon } from '@phosphor-icons/react'
 import { cn } from '@/shared/lib'
 
-// Работает с react-hook-form: <Checkbox {...register('agree')} error={errors.agree?.message}>Текст</Checkbox>
 export function Checkbox({ error, className, children, ref, ...props }) {
   return (
     <div className={cn('flex flex-col gap-1', className)}>

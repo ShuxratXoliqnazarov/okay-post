@@ -17,9 +17,7 @@ export const checkoutSchema = z.object({
 
 export const EMPTY_ITEM = { link: '', name: '', quantity: '1', size: '', color: '', price: '', comment: '' }
 
-// Товары из сохранённого заказа -> значения формы (в инпутах всё строками)
 export const itemsToFormValues = (items) =>
   items.map((item) => ({ ...item, quantity: String(item.quantity), price: String(item.price) }))
 
-// Магазин = домен первой ссылки: https://www.next.co.uk/... -> next.co.uk
 export const getShopFromLink = (link) => new URL(link).hostname.replace(/^www\./, '')

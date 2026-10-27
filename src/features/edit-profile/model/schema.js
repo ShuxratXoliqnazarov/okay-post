@@ -11,7 +11,7 @@ export const editProfileSchema = z.object({
   subscribed: z.boolean(),
 })
 
-// Фото профиля: только картинки до 2 МБ (localStorage небольшой)
+// больше 2мб в localStorage лучше не пихать
 export const AVATAR_MAX_SIZE = 2 * 1024 * 1024
 export const AVATAR_TYPES = ['image/jpeg', 'image/png', 'image/webp']
 

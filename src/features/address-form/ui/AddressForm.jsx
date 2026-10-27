@@ -5,11 +5,6 @@ import { useAddressStore } from '@/entities/address'
 import { Alert, Button, Input } from '@/shared/ui'
 import { ADDRESS_FIELDS, addressSchema, EMPTY_ADDRESS } from '../model/schema'
 
-/*
-  Форма адреса получателя (экран 24).
-  address — редактируем существующий, без него — создаём новый.
-  Ставь key={address?.id ?? 'new'}, чтобы форма сбрасывалась при смене адреса.
-*/
 export function AddressForm({ address, onSaved }) {
   const { addAddress, updateAddress } = useAddressStore()
   const [serverError, setServerError] = useState('')

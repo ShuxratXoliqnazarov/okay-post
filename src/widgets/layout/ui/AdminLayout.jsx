@@ -15,7 +15,6 @@ const adminLinks = [
   { to: ROUTES.ADMIN_SETTINGS, label: 'Настройки' },
 ]
 
-// Обёртка админ-панели: боковое меню слева + контент справа
 export function AdminLayout() {
   return (
     <div className="flex min-h-screen">

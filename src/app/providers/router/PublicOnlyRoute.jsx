@@ -2,7 +2,7 @@ import { Navigate, Outlet } from 'react-router-dom'
 import { selectIsAuth, useUserStore } from '@/entities/user'
 import { ROUTES } from '@/shared/config'
 
-// Для login/register: авторизованного пользователя отправляет в профиль.
+// залогиненного не пускаем на логин/регистрацию
 export function PublicOnlyRoute() {
   const isAuth = useUserStore(selectIsAuth)
   return isAuth ? <Navigate to={ROUTES.CABINET_PROFILE} replace /> : <Outlet />

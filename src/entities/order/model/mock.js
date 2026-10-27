@@ -1,6 +1,5 @@
 import { ORDER_STATUS, ORDER_TYPE } from './constants'
 
-// Стартовые заказы тестового пользователя (userId: 1). Есть все статусы, чтобы было что показать.
 export const ORDERS_SEED = [
   {
     id: 35651,

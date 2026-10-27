@@ -1,10 +1,9 @@
-// Статусы посылки (по тексту «Информация по работе с сайтом»)
 export const PARCEL_STATUS = {
-  REQUESTED: 'requested', // клиент отправил запрос на формирование
-  PROCESSING: 'processing', // склад собирает и упаковывает
-  AWAITING_PAYMENT: 'awaiting_payment', // упакована, ждёт оплаты и декларации
-  FORMED: 'formed', // оплачена, сформирована
-  SENT: 'sent', // отправлена со склада с трек-номером
+  REQUESTED: 'requested',
+  PROCESSING: 'processing',
+  AWAITING_PAYMENT: 'awaiting_payment',
+  FORMED: 'formed',
+  SENT: 'sent',
 }
 
 export const PARCEL_STATUS_LABEL = {
@@ -15,7 +14,7 @@ export const PARCEL_STATUS_LABEL = {
   [PARCEL_STATUS.SENT]: 'Отправлена',
 }
 
-// «Выберите тип» на экране 22 — уточнить список у заказчика
+// TODO: уточнить список доставок
 export const DELIVERY_METHODS = [
   { value: 'russian-post', label: 'Почта России' },
   { value: 'dhl', label: 'DHL Express' },
@@ -24,7 +23,6 @@ export const DELIVERY_METHODS = [
   { value: 'fastbox', label: 'Фастбокс' },
 ]
 
-// Чекбоксы доп. услуг на экране 22
 export const PARCEL_SERVICES = [
   { value: 'consolidation', label: 'Консолидация' },
   { value: 'remove-invoice', label: 'Удаление инвойса' },

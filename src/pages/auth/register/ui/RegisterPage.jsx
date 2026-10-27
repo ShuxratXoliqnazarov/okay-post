@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { RegisterForm } from '@/features/register'
 import { ROUTES } from '@/shared/config'
 
-// Figma: 09_Вход_Забыли пароль (попап «Начните совершать покупки в английских магазинах»)
+// макет: 09_Вход_Забыли пароль
 export function RegisterPage() {
   return (
     <>

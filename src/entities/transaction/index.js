@@ -1,4 +1,3 @@
-// Публичный API слайса: import { useTransactionStore } from '@/entities/transaction'
 export { useTransactionStore } from './model/store'
 export { transactionApi } from './api/transactionApi'
 export {

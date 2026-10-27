@@ -2,7 +2,6 @@ import { getFullName } from '@/entities/user'
 import { ROUTES } from '@/shared/config'
 import { Avatar, Button, Card } from '@/shared/ui'
 
-// Карточка профиля: фото + данные + «Редактировать» / «Изменить пароль» (экран 08)
 export function ProfileCard({ user }) {
   const rows = [
     { label: 'Имя:', value: getFullName(user) },

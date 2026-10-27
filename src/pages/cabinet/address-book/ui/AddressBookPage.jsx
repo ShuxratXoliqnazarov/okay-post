@@ -6,7 +6,7 @@ import { AddressForm } from '@/features/address-form'
 import { cn } from '@/shared/lib'
 import { Alert, Button, PageTitle } from '@/shared/ui'
 
-// Figma: 24_Адресная книга. Сверху — сохранённые адреса, ниже — форма нового/редактируемого адреса.
+// макет: 24_Адресная книга
 export function AddressBookPage() {
   const user = useUserStore(selectUser)
   const { addresses, isLoading, fetchAddresses, removeAddress } = useAddressStore()

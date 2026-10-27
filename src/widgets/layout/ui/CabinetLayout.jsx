@@ -6,11 +6,10 @@ import { CabinetHeader } from '@/widgets/cabinet-header'
 import { CabinetInfoBar } from '@/widgets/cabinet-info-bar'
 import { Container } from '@/shared/ui'
 
-// Обёртка личного кабинета: своя шапка + градиентная инфо-полоса + контент + футер ЛК
 export function CabinetLayout() {
   const fetchNotifications = useNotificationStore((state) => state.fetchNotifications)
 
-  // Уведомления нужны на всех страницах ЛК — для бейджа в меню
+  // грузим сразу, нужны для бейджа
   useEffect(() => {
     fetchNotifications()
   }, [fetchNotifications])

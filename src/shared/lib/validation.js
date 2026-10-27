@@ -1,11 +1,5 @@
 import { z } from 'zod'
 
-/*
-  Общие правила валидации полей. Собирай из них схемы форм в features/<name>/model/schema.js:
-    z.object({ email: emailField, password: passwordField })
-  Так все формы проекта проверяют email/телефон/пароль одинаково.
-*/
-
 export const requiredString = (message = 'Обязательное поле') => z.string().trim().min(1, message)
 
 export const emailField = z
@@ -15,7 +9,7 @@ export const emailField = z
   .toLowerCase()
   .pipe(z.email('Некорректный email'))
 
-// Таджикистан: принимает "+992 (90) 123-45-67", сохраняет "+992901234567"
+// +992 XX XXX XX XX, пробелы/скобки/тире убираем
 export const phoneField = z
   .string()
   .trim()
@@ -30,7 +24,7 @@ export const nameField = z
   .max(50, 'Максимум 50 символов')
   .regex(/^[a-zA-Zа-яА-ЯёЁ\s-]+$/, 'Только буквы, пробел и дефис')
 
-// Для создания/смены пароля. Во входе используй requiredString — там проверяем только наличие.
+// для регистрации и смены пароля
 export const passwordField = z
   .string()
   .min(8, 'Минимум 8 символов')
@@ -52,7 +46,7 @@ export const trackNumberField = z
   .min(1, 'Введите трек-номер')
   .regex(/^[a-zA-Z0-9]{8,30}$/, 'Трек-номер: 8–30 латинских букв и цифр')
 
-// Принимает "12", "12.5", "12,50" (строка из инпута) -> число 12.5
+// '12,5' -> 12.5
 export const moneyField = z
   .string()
   .trim()

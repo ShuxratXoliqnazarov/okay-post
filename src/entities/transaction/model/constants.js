@@ -11,7 +11,7 @@ export const TRANSACTION_TYPE_LABEL = {
 }
 
 export const TRANSACTION_STATUS = {
-  PENDING: 'pending', // ждёт оплаты — в строке кнопка «Оплатить»
+  PENDING: 'pending', // не оплачено
   DONE: 'done',
 }
 
@@ -20,7 +20,6 @@ export const TRANSACTION_STATUS_LABEL = {
   [TRANSACTION_STATUS.DONE]: 'Проведена',
 }
 
-// Способы оплаты и лимит одного платежа в фунтах (модалка «Выберите метод оплаты», экран 18)
 export const PAYMENT_METHODS = [
   { value: 'card', label: 'VISA/MASTERCARD', limit: 100 },
   { value: 'paypal', label: 'PAYPAL', limit: 250 },

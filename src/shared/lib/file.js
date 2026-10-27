@@ -1,4 +1,4 @@
-// Картинку из <input type="file"> -> base64-строка (для превью и хранения в localStorage)
+// файл -> base64
 export const readFileAsDataUrl = (file) =>
   new Promise((resolve, reject) => {
     const reader = new FileReader()
@@ -7,7 +7,7 @@ export const readFileAsDataUrl = (file) =>
     reader.readAsDataURL(file)
   })
 
-// Скачать текстовый файл (например, счёт по транзакции)
+// скачать txt
 export function downloadTextFile(fileName, text) {
   const url = URL.createObjectURL(new Blob([text], { type: 'text/plain;charset=utf-8' }))
   const link = document.createElement('a')

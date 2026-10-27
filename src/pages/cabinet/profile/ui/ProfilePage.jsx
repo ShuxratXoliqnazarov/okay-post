@@ -10,7 +10,7 @@ const TABS = [
   { value: 'requisites', label: 'Реквизиты для оплаты' },
 ]
 
-// Figma: 08_ЛК_Профиль_Ваш виртуальный, 12 и 13 (вкладки). Активная вкладка — в URL: ?tab=info
+// макет: 08_ЛК_Профиль_Ваш виртуальный, 12 и 13
 export function ProfilePage() {
   const user = useUserStore(selectUser)
   const [searchParams, setSearchParams] = useSearchParams()

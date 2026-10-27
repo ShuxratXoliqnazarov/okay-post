@@ -1,6 +1,6 @@
 import { TRANSACTION_STATUS, TRANSACTION_TYPE } from './constants'
 
-// amount в фунтах: плюс — зачисление, минус — списание. balanceAfter — «Остаток» после операции.
+// amount: + зачисление, - списание
 export const TRANSACTIONS_SEED = [
   {
     id: 301,

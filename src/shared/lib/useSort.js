@@ -1,10 +1,5 @@
 import { useMemo, useState } from 'react'
 
-/*
-  Сортировка таблицы по клику на заголовок.
-    const { sorted, sort, toggleSort } = useSort(orders, { key: 'createdAt', direction: 'desc' })
-    <SortableHeader sortKey="createdAt" sort={sort} onSort={toggleSort}>Дата</SortableHeader>
-*/
 export function useSort(items, initialSort = { key: null, direction: 'asc' }) {
   const [sort, setSort] = useState(initialSort)
 

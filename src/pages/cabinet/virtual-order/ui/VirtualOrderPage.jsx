@@ -1,7 +1,7 @@
 import { VirtualOrderForm } from '@/features/create-virtual-order'
 import { PageTitle } from '@/shared/ui'
 
-// Figma: 19_ЛК_Заказы_Виртуальный заказ
+// макет: 19_ЛК_Заказы_Виртуальный заказ
 export function VirtualOrderPage() {
   return (
     <>

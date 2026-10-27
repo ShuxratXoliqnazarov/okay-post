@@ -1,14 +1,6 @@
 import { create } from 'zustand'
 import { addressApi } from '../api/addressApi'
 
-/*
-  Состояние на экране: список, загрузка, ошибка.
-  Сами данные хранятся в фейковой базе (localStorage) — стор только показывает их.
-
-  Использование на странице:
-    const { addresses, isLoading, fetchAddresses } = useAddressStore()
-    useEffect(() => { fetchAddresses() }, [fetchAddresses])
-*/
 export const useAddressStore = create((set) => ({
   addresses: [],
   isLoading: false,

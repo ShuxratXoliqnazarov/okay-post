@@ -3,10 +3,6 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { Button, Input, Radio, Select } from '@/shared/ui'
 import { DEFAULT_ORDERS_FILTER, ordersFilterSchema, PERIOD_OPTIONS } from '../model/filter'
 
-/*
-  Раскрывающаяся строка фильтра заказов (экран 18_фильтр).
-  onApply(filter) — «Показать», onReset() — «Сбросить». Фильтрует filterOrders(orders, filter).
-*/
 export function OrdersFilter({ onApply, onReset }) {
   const {
     register,
@@ -32,7 +28,7 @@ export function OrdersFilter({ onApply, onReset }) {
       onSubmit={handleSubmit(onApply)}
       noValidate
       className="flex flex-wrap items-start gap-x-6 gap-y-4 py-6"
-      // Клик по полю сразу выбирает его режим
+      // при клике на поле сразу переключаем радио
       onFocus={(event) => {
         const fieldMode = event.target.dataset.mode
         if (fieldMode && fieldMode !== mode) setValue('mode', fieldMode)

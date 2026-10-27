@@ -7,7 +7,6 @@ const londonFormatter = new Intl.DateTimeFormat('ru-RU', {
   second: '2-digit',
 })
 
-// Текущее время в Лондоне, обновляется каждую секунду: "19 : 10 : 36"
 export function useLondonTime() {
   const [time, setTime] = useState(() => new Date())
 

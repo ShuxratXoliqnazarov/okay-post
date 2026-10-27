@@ -1,4 +1,3 @@
-// Публичный API слайса: import { useParcelStore } from '@/entities/parcel'
 export { useParcelStore } from './model/store'
 export { parcelApi } from './api/parcelApi'
 export {

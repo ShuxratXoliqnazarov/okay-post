@@ -12,10 +12,6 @@ import { userApi, useUserStore } from '@/entities/user'
 import { Alert, Button, Input, Modal } from '@/shared/ui'
 import { topUpSchema } from '../model/schema'
 
-/*
-  Кнопка «Добавить транзакцию» / «Пополнить счет» + модалка пополнения баланса.
-  Увеличивает баланс пользователя и записывает транзакцию «Пополнение».
-*/
 export function TopUpBalanceButton({ variant = 'primary', size = 'sm', className, children = 'Пополнить счет' }) {
   const [isOpen, setIsOpen] = useState(false)
   const [serverError, setServerError] = useState('')

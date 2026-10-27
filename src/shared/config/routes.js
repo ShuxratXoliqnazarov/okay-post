@@ -1,8 +1,6 @@
-// Все пути приложения в одном месте.
-// Никогда не пиши пути строкой в компонентах — бери отсюда: ROUTES.LOGIN
-// Пути с параметрами собирай через функции ниже: getAdminOrderEditPath(5) -> '/admin/orders/5'
+// все пути тут, строкой в компонентах не писать
 export const ROUTES = {
-  // Публичные страницы сайта
+  // сайт
   HOME: '/',
   HOW_TO_BUY: '/how-to-buy',
   SALES: '/sales',
@@ -12,26 +10,26 @@ export const ROUTES = {
   BLOG: '/blog',
   SHOPS: '/shops',
 
-  // Авторизация (в Figma — попапы на главной)
+  // авторизация
   LOGIN: '/login',
   REGISTER: '/register',
   FORGOT_PASSWORD: '/forgot-password',
 
-  // Личный кабинет (только для авторизованных)
+  // лк
   CABINET: '/cabinet',
   CABINET_PROFILE: '/cabinet/profile',
   CABINET_PROFILE_EDIT: '/cabinet/profile/edit',
   CABINET_CHANGE_PASSWORD: '/cabinet/profile/password',
   CABINET_ORDERS: '/cabinet/orders',
-  CABINET_PARCELS: '/cabinet/orders#parcels', // раздел на странице заказов, не отдельный Route
-  CABINET_TRANSACTIONS: '/cabinet/orders#transactions', // раздел на странице заказов, не отдельный Route
+  CABINET_PARCELS: '/cabinet/orders#parcels', // якорь, не отдельный роут
+  CABINET_TRANSACTIONS: '/cabinet/orders#transactions', // якорь, не отдельный роут
   CABINET_VIRTUAL_ORDER: '/cabinet/orders/virtual',
   CABINET_ORDER_CHECKOUT: '/cabinet/orders/checkout',
   CABINET_CREATE_PARCEL: '/cabinet/parcels/new',
   CABINET_ADDRESS_BOOK: '/cabinet/address-book',
   CABINET_NOTIFICATIONS: '/cabinet/notifications',
 
-  // Админ-панель (только для role === 'admin')
+  // админка
   ADMIN: '/admin',
   ADMIN_LOGIN: '/admin/login',
   ADMIN_ORDERS: '/admin/orders',

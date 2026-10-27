@@ -1,15 +1,6 @@
 import { CaretDownIcon } from '@phosphor-icons/react'
 import { cn } from '@/shared/lib'
 
-/*
-  Таблица из макета: светлая шапка, строки с тонкими разделителями.
-  На узких экранах прокручивается по горизонтали внутри своего контейнера.
-
-    <Table>
-      <thead><tr><SortableHeader sortKey="createdAt" sort={sort} onSort={toggleSort}>Дата</SortableHeader></tr></thead>
-      <tbody><tr><Td>01.10.2026</Td></tr></tbody>
-    </Table>
-*/
 export function Table({ className, children }) {
   return (
     <div className={cn('overflow-x-auto', className)}>
@@ -54,7 +45,6 @@ export function Td({ className, children }) {
   return <td className={cn('px-5 py-3 font-light whitespace-nowrap text-dark', className)}>{children}</td>
 }
 
-// Строка «нет данных» на всю ширину таблицы
 export function EmptyRow({ colSpan, children = 'Нет ни одной записи по текущему состоянию' }) {
   return (
     <tr>

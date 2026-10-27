@@ -7,7 +7,7 @@ export const PERIOD_OPTIONS = [
   { value: 'this-year', label: 'Этот год' },
 ]
 
-// mode: period — выбор из списка, range — свои даты, all — «Без учета даты»
+// mode: period | range | all
 export const ordersFilterSchema = z
   .object({
     mode: z.enum(['period', 'range', 'all']),
@@ -27,7 +27,6 @@ export const ordersFilterSchema = z
 
 export const DEFAULT_ORDERS_FILTER = { mode: 'all', period: 'this-month', from: '', to: '', orderId: '' }
 
-// Начало периода для режима «period»
 function getPeriodStart(period, now = new Date()) {
   const year = now.getFullYear()
   const month = now.getMonth()
@@ -43,7 +42,6 @@ function getPeriodStart(period, now = new Date()) {
   }
 }
 
-// Применить фильтр к списку заказов
 export function filterOrders(orders, filter) {
   return orders.filter((order) => {
     if (filter.orderId && !String(order.id).includes(filter.orderId)) return false

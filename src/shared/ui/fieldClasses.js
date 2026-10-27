@@ -1,6 +1,5 @@
 import { cn } from '@/shared/lib'
 
-// Общий стиль полей ввода из макета (Input, Textarea, Select)
 export const fieldClasses = (error) =>
   cn(
     'w-full rounded-md border bg-field px-4 text-sm text-dark outline-none transition-colors',

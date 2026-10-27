@@ -1,12 +1,11 @@
-// Токен текущей сессии. Хранится в localStorage, отправляется в каждом запросе.
+// токен лежит в localStorage
 const TOKEN_KEY = 'okeypost-token'
 
 export const getToken = () => localStorage.getItem(TOKEN_KEY)
 export const setToken = (token) => localStorage.setItem(TOKEN_KEY, token)
 export const removeToken = () => localStorage.removeItem(TOKEN_KEY)
 
-// ---- Только для фейкового бэкенда ----
-// Токен имеет вид "fake-token-<userId>", так фейковое API понимает, кто сейчас вошёл.
+// фейк токен: fake-token-<id>
 export const createFakeToken = (userId) => `fake-token-${userId}`
 
 export function getCurrentUserId() {

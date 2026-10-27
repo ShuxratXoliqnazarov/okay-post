@@ -4,7 +4,7 @@ import { TopUpBalanceButton } from '@/features/top-up-balance'
 import { Container, PaymentLogo, Tooltip, TooltipRows } from '@/shared/ui'
 import { useLondonTime } from '../model/useLondonTime'
 
-// Курсы — заглушка, потом брать с бэкенда
+// TODO: курсы брать с бэка
 const EXCHANGE_RATES = [
   { label: 'USD', value: '£1 = $1.27' },
   { label: 'EUR', value: '£1 = €1.17' },
@@ -22,7 +22,6 @@ function InfoItem({ icon, className, children }) {
   )
 }
 
-// Градиентная полоса под шапкой ЛК: время в Лондоне, график, курс, бонусы, баланс, пополнение
 export function CabinetInfoBar() {
   const user = useUserStore(selectUser)
   const londonTime = useLondonTime()

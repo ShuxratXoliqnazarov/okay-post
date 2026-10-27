@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { ForgotPasswordForm } from '@/features/forgot-password'
 import { ROUTES } from '@/shared/config'
 
-// Figma: 09_Вход_Забыли пароль (попап «Восстановление пароля»)
+// макет: 09_Вход_Забыли пароль
 export function ForgotPasswordPage() {
   return (
     <>

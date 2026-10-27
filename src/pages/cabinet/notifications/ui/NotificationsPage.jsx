@@ -58,7 +58,7 @@ function NotificationCard({ notification, onOpen, onRemove }) {
   )
 }
 
-// Figma: 25_Уведомления. Загружаются в CabinetLayout (нужны для бейджа в меню).
+// макет: 25_Уведомления
 export function NotificationsPage() {
   const { notifications, isLoading, updateNotification, removeNotification } = useNotificationStore()
 

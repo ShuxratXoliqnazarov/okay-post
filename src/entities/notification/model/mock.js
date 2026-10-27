@@ -1,6 +1,5 @@
 import { NOTIFICATION_TYPE } from './constants'
 
-// Тексты — из макета (экран 25)
 export const NOTIFICATIONS_SEED = [
   {
     id: 501,

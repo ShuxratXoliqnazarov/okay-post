@@ -29,10 +29,9 @@ import {
 
 const TABS = [
   { value: 'all', label: 'Все' },
-  { value: 'mine', label: 'Мои заказы' }, // выкупленные самостоятельно (виртуальные)
+  { value: 'mine', label: 'Мои заказы' }, // виртуальные
 ]
 
-// Подсказка к сумме: из чего она состоит
 function AmountTooltip({ order }) {
   if (order.type === ORDER_TYPE.VIRTUAL) return 'Сумма, указанная при оформлении'
   return (
@@ -67,7 +66,6 @@ function OrderAction({ order, onPaid }) {
   return null
 }
 
-// «Заказы пользователя …»: вкладки, поиск по трек-номеру, фильтр, сортируемая таблица (экраны 17, 18)
 export function OrdersSection() {
   const user = useUserStore(selectUser)
   const { orders, isLoading, error, updateOrder } = useOrderStore()

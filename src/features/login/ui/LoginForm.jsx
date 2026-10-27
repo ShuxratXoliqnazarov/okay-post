@@ -28,7 +28,7 @@ export function LoginForm() {
       setServerError('')
       const response = await userApi.login(data)
       setAuth(response)
-      // Вернуть туда, откуда отправил ProtectedRoute, иначе — в профиль
+      // возвращаем туда откуда пришел
       navigate(location.state?.from?.pathname ?? ROUTES.CABINET_PROFILE, { replace: true })
     } catch (error) {
       setServerError(error.message)

@@ -1,14 +1,6 @@
 import { create } from 'zustand'
 import { notificationApi } from '../api/notificationApi'
 
-/*
-  Состояние на экране: список, загрузка, ошибка.
-  Сами данные хранятся в фейковой базе (localStorage) — стор только показывает их.
-
-  Использование на странице:
-    const { notifications, isLoading, fetchNotifications } = useNotificationStore()
-    useEffect(() => { fetchNotifications() }, [fetchNotifications])
-*/
 export const useNotificationStore = create((set) => ({
   notifications: [],
   isLoading: false,
@@ -44,6 +36,5 @@ export const useNotificationStore = create((set) => ({
   },
 }))
 
-// Для зелёного бейджа-счётчика в меню ЛК
 export const selectUnreadCount = (state) =>
   state.notifications.filter((item) => !item.isRead).length

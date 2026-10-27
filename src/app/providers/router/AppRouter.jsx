@@ -1,6 +1,6 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 
-// Публичные страницы
+// публичные
 import { BlogPage } from '@/pages/public/blog'
 import { FaqPage } from '@/pages/public/faq'
 import { HomePage } from '@/pages/public/home'
@@ -11,12 +11,12 @@ import { PricesPage } from '@/pages/public/prices'
 import { SalesPage } from '@/pages/public/sales'
 import { ShopsPage } from '@/pages/public/shops'
 
-// Авторизация
+// авторизация
 import { ForgotPasswordPage } from '@/pages/auth/forgot-password'
 import { LoginPage } from '@/pages/auth/login'
 import { RegisterPage } from '@/pages/auth/register'
 
-// Личный кабинет
+// лк
 import { AddressBookPage } from '@/pages/cabinet/address-book'
 import { ChangePasswordPage } from '@/pages/cabinet/change-password'
 import { CreateParcelPage } from '@/pages/cabinet/create-parcel'
@@ -27,7 +27,7 @@ import { ProfilePage } from '@/pages/cabinet/profile'
 import { ProfileEditPage } from '@/pages/cabinet/profile-edit'
 import { VirtualOrderPage } from '@/pages/cabinet/virtual-order'
 
-// Админ-панель
+// админка
 import { AdminBarcodePage } from '@/pages/admin/barcode'
 import { AdminCompanyExpensesPage } from '@/pages/admin/company-expenses'
 import { AdminLoginPage } from '@/pages/admin/login'
@@ -47,13 +47,11 @@ import { AdminRoute } from './AdminRoute'
 import { ProtectedRoute } from './ProtectedRoute'
 import { PublicOnlyRoute } from './PublicOnlyRoute'
 
-// Все маршруты приложения (декларативный подход).
-// Новая страница: создай её в src/pages, добавь путь в shared/config/routes.js и <Route> сюда.
 export function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* ---------- Сайт: шапка + футер ---------- */}
+        {/* сайт */}
         <Route element={<MainLayout />}>
           <Route path={ROUTES.HOME} element={<HomePage />} />
           <Route path={ROUTES.HOW_TO_BUY} element={<HowToBuyPage />} />
@@ -67,7 +65,7 @@ export function AppRouter() {
           <Route path="*" element={<NotFoundPage />} />
         </Route>
 
-        {/* ---------- Личный кабинет: своя шапка и футер, только авторизованные ---------- */}
+        {/* лк */}
         <Route element={<ProtectedRoute />}>
           <Route element={<CabinetLayout />}>
             <Route path={ROUTES.CABINET} element={<Navigate to={ROUTES.CABINET_PROFILE} replace />} />
@@ -83,7 +81,7 @@ export function AppRouter() {
           </Route>
         </Route>
 
-        {/* ---------- Авторизация: только для гостей ---------- */}
+        {/* вход / регистрация */}
         <Route element={<PublicOnlyRoute />}>
           <Route element={<AuthLayout />}>
             <Route path={ROUTES.LOGIN} element={<LoginPage />} />
@@ -92,7 +90,7 @@ export function AppRouter() {
           </Route>
         </Route>
 
-        {/* ---------- Админ-панель ---------- */}
+        {/* админка */}
         <Route path={ROUTES.ADMIN_LOGIN} element={<AdminLoginPage />} />
         <Route element={<AdminRoute />}>
           <Route element={<AdminLayout />}>

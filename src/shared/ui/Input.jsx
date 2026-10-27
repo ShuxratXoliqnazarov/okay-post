@@ -2,7 +2,6 @@ import { cn } from '@/shared/lib'
 import { Field } from './Field'
 import { fieldClasses } from './fieldClasses'
 
-// Работает с react-hook-form: <Input label="Имя:" {...register('name')} error={errors.name?.message} />
 export function Input({ label, required, error, icon, className, ref, ...props }) {
   return (
     <Field label={label} required={required} error={error} className={className}>

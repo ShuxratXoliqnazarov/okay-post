@@ -1,4 +1,4 @@
-// Склад в Великобритании. Виртуальный адрес клиента = эти данные + его virtualId (экран 08).
+// адрес склада в лондоне
 export const WAREHOUSE_ADDRESS = {
   firstLine: 'Unit 5 Cromwell Estate',
   secondLine: 'Staffa road UK16988',
@@ -9,7 +9,6 @@ export const WAREHOUSE_ADDRESS = {
   phone: '07308187545',
 }
 
-// Строки таблицы «Ваш виртуальный адрес»
 export const getVirtualAddressRows = (user) => [
   { label: 'Ваш ID Клиента:', value: user.virtualId },
   { label: 'Name, Surname:', value: `${user.lastName} ${user.firstName} ${user.virtualId}` },

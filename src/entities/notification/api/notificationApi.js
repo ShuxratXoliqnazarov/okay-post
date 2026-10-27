@@ -3,7 +3,6 @@ import { NOTIFICATIONS_SEED } from '../model/mock'
 
 const notifications = createCollection('notifications', NOTIFICATIONS_SEED)
 
-// Фейковое API: уведомления текущего пользователя (новые — сверху)
 export const notificationApi = {
   getAll: async () => {
     await delay()

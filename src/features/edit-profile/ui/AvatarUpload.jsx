@@ -3,7 +3,6 @@ import { readFileAsDataUrl } from '@/shared/lib'
 import { Avatar, Button } from '@/shared/ui'
 import { validateAvatar } from '../model/schema'
 
-// Фото + кнопка «Выбрать файл» с превью (экран 10)
 export function AvatarUpload({ value, onChange, error, onError }) {
   const inputRef = useRef(null)
 

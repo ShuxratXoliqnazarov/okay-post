@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { LoginForm } from '@/features/login'
 import { ROUTES } from '@/shared/config'
 
-// Figma: 09_Вход_Забыли пароль (попап «Выполните вход в ваш личный кабинет»)
+// макет: 09_Вход_Забыли пароль
 export function LoginPage() {
   return (
     <>
@@ -15,7 +15,7 @@ export function LoginPage() {
         </Link>
       </p>
 
-      {/* Подсказка для разработки — убрать перед сдачей */}
+      {/* TODO: убрать перед сдачей */}
       <p className="mt-6 rounded-xl bg-gray-100 p-3 text-xs text-gray-500">
         Тестовый вход: test@okeypost.com / test1234
       </p>

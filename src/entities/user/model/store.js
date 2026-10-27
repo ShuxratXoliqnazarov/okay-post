@@ -2,7 +2,7 @@ import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 import { removeToken, setToken } from '@/shared/api'
 
-// Текущий пользователь. persist сохраняет его в localStorage, чтобы после перезагрузки остаться в аккаунте.
+// persist чтобы после перезагрузки не выкидывало из аккаунта
 export const useUserStore = create(
   persist(
     (set) => ({
@@ -14,7 +14,6 @@ export const useUserStore = create(
         set({ user, token })
       },
 
-      // После редактирования профиля — кладём обновлённого пользователя
       setUser: (user) => set({ user }),
 
       logout: () => {
@@ -26,7 +25,6 @@ export const useUserStore = create(
   ),
 )
 
-// Селекторы — чтобы компонент перерисовывался только когда меняется нужное поле
 export const selectUser = (state) => state.user
 export const selectIsAuth = (state) => Boolean(state.token)
 export const selectIsAdmin = (state) => state.user?.role === 'admin'

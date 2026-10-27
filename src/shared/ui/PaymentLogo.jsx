@@ -7,10 +7,6 @@ const LOGOS = {
   card: { src: cardsLogo, alt: 'Visa / Mastercard', className: 'h-[26px]' },
 }
 
-/*
-  Логотип платёжной системы. framed — в белой «таблетке», как в инфо-полосе ЛК.
-    <PaymentLogo type="paypal" framed />
-*/
 export function PaymentLogo({ type, framed, className }) {
   const logo = LOGOS[type]
   const image = <img src={logo.src} alt={logo.alt} className={cn('w-auto', logo.className)} />

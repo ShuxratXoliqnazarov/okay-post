@@ -1,6 +1,6 @@
 import { EditProfileForm } from '@/features/edit-profile'
 
-// Figma: 10_ЛК_Профиль_Редактирование
+// макет: 10_ЛК_Профиль_Редактирование
 export function ProfileEditPage() {
   return (
     <>

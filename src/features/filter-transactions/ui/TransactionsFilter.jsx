@@ -7,7 +7,6 @@ import { DEFAULT_TRANSACTIONS_FILTER, transactionsFilterSchema } from '../model/
 
 const TYPE_OPTIONS = Object.entries(TRANSACTION_TYPE_LABEL).map(([value, label]) => ({ value, label }))
 
-// Строка фильтра транзакций: «От и до», «Все транзакции», «Показать» (экран 17)
 export function TransactionsFilter({ onApply }) {
   const {
     register,

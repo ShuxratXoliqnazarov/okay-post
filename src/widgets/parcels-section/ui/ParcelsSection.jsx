@@ -30,7 +30,6 @@ import {
 
 const STATUS_OPTIONS = Object.entries(PARCEL_STATUS_LABEL).map(([value, label]) => ({ value, label }))
 
-// «Посылки пользователя …»: таблица посылок, тултип с габаритами, оплата (экран 17)
 export function ParcelsSection() {
   const user = useUserStore(selectUser)
   const { parcels, isLoading, error, updateParcel } = useParcelStore()
@@ -44,7 +43,7 @@ export function ParcelsSection() {
   )
   const { sorted, sort, toggleSort } = useSort(visibleParcels, { key: 'createdAt', direction: 'desc' })
 
-  // Если за посылку уже выставлен счёт — оплачиваем его, а не создаём новый
+  // если счет уже есть, оплачиваем его
   const findPendingTransaction = (parcelId) =>
     transactions.find((item) => item.parcelId === parcelId && item.status === TRANSACTION_STATUS.PENDING)
 

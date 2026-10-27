@@ -3,10 +3,6 @@ import { cn } from '@/shared/lib'
 import { Field } from './Field'
 import { fieldClasses } from './fieldClasses'
 
-/*
-  Нативный select в стиле макета (зелёная стрелка справа).
-    <Select label="Выберите тип:" options={[{ value: 'dhl', label: 'DHL' }]} placeholder="Не выбрано" {...register('type')} />
-*/
 export function Select({ label, required, error, options, placeholder, className, ref, ...props }) {
   return (
     <Field label={label} required={required} error={error} className={className}>

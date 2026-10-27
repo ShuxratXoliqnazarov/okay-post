@@ -1,14 +1,6 @@
 import { create } from 'zustand'
 import { parcelApi } from '../api/parcelApi'
 
-/*
-  Состояние на экране: список, загрузка, ошибка.
-  Сами данные хранятся в фейковой базе (localStorage) — стор только показывает их.
-
-  Использование на странице:
-    const { parcels, isLoading, fetchParcels } = useParcelStore()
-    useEffect(() => { fetchParcels() }, [fetchParcels])
-*/
 export const useParcelStore = create((set) => ({
   parcels: [],
   isLoading: false,

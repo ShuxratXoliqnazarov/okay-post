@@ -1,6 +1,5 @@
 import { cn } from '@/shared/lib'
 
-// Зелёный кружок-счётчик (непрочитанные уведомления). 0 — не показывается.
 export function Badge({ count, className }) {
   if (!count) return null
   return (

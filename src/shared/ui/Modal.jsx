@@ -3,12 +3,6 @@ import { createPortal } from 'react-dom'
 import { XIcon } from '@phosphor-icons/react'
 import { cn } from '@/shared/lib'
 
-/*
-  Модальное окно поверх затемнённой страницы.
-  Закрывается по крестику, Esc и клику по подложке.
-    const [isOpen, setIsOpen] = useState(false)
-    <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} title="Выберите метод оплаты:">...</Modal>
-*/
 export function Modal({ isOpen, onClose, title, className, children }) {
   useEffect(() => {
     if (!isOpen) return

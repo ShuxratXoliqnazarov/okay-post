@@ -4,7 +4,7 @@ import { ORDER_STATUS, useOrderStore } from '@/entities/order'
 import { CreateParcelForm } from '@/features/create-parcel'
 import { PageTitle } from '@/shared/ui'
 
-// Figma: 22_ЛК_Создание посылки
+// макет: 22_ЛК_Создание посылки
 export function CreateParcelPage() {
   const { orders, isLoading: isOrdersLoading, fetchOrders } = useOrderStore()
   const { addresses, isLoading: isAddressesLoading, fetchAddresses } = useAddressStore()
@@ -14,7 +14,7 @@ export function CreateParcelPage() {
     fetchAddresses()
   }, [fetchOrders, fetchAddresses])
 
-  // В посылку можно положить только заказы, которые уже пришли на склад
+  // в посылку только то что уже на складе
   const receivedOrders = orders.filter((order) => order.status === ORDER_STATUS.RECEIVED)
 
   return (

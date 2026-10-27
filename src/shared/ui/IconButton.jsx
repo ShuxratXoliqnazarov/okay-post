@@ -1,6 +1,5 @@
 import { cn } from '@/shared/lib'
 
-// Круглая кнопка с иконкой (фильтр). active — залитая зелёным.
 export function IconButton({ active, label, className, children, ...props }) {
   return (
     <button

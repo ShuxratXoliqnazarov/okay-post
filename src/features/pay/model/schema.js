@@ -1,7 +1,7 @@
 import { z } from 'zod'
 import { PAYMENT_METHODS } from '@/entities/transaction'
 
-// Схема зависит от суммы: у каждого способа оплаты свой лимит за один платёж
+// у карты и paypal разные лимиты
 export const createPaymentSchema = (amount) =>
   z
     .object({

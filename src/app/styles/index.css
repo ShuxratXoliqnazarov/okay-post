@@ -1,13 +1,6 @@
 @import "tailwindcss";
 
-/*
-  Дизайн-токены из Figma. После объявления доступны как классы:
-  bg-primary, text-dark, border-line, bg-surface, shadow-card и т.д.
-
-  Шрифт в макете — Gilroy (платный). Если у команды есть файлы шрифта —
-  положить в src/shared/assets/fonts и подключить через @font-face ниже.
-  Пока работает запасной Manrope из Google Fonts (index.html).
-*/
+/* цвета из фигмы. шрифт gilroy платный, пока manrope */
 @theme {
   --color-primary: #00c97b;
   --color-primary-light: #00d981;

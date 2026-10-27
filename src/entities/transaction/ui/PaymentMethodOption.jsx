@@ -1,11 +1,5 @@
 import { PaymentLogo, Radio } from '@/shared/ui'
 
-/*
-  Вариант оплаты в модалке (экран 18): радио + логотип + название + лимит.
-    {PAYMENT_METHODS.map((method) => (
-      <PaymentMethodOption key={method.value} method={method} {...register('method')} />
-    ))}
-*/
 export function PaymentMethodOption({ method, ref, ...props }) {
   return (
     <Radio ref={ref} value={method.value} {...props}>

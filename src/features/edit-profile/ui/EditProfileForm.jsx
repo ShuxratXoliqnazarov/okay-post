@@ -8,7 +8,6 @@ import { Alert, Button, Card, Checkbox, Input } from '@/shared/ui'
 import { editProfileSchema } from '../model/schema'
 import { AvatarUpload } from './AvatarUpload'
 
-// Экран 10: фото слева, форма в 2 колонки справа
 export function EditProfileForm() {
   const navigate = useNavigate()
   const user = useUserStore(selectUser)

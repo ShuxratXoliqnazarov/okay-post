@@ -37,7 +37,6 @@ function downloadInvoice(transaction, userName) {
   )
 }
 
-// «Транзакции пользователя …»: фильтр по датам и типу, таблица, скачивание счёта (экран 17)
 export function TransactionsSection() {
   const user = useUserStore(selectUser)
   const { transactions, isLoading, error } = useTransactionStore()

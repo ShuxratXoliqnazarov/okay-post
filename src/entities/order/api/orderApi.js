@@ -3,7 +3,6 @@ import { ORDERS_SEED } from '../model/mock'
 
 const orders = createCollection('orders', ORDERS_SEED)
 
-// Фейковое API: заказы текущего пользователя (новые — сверху)
 export const orderApi = {
   getAll: async () => {
     await delay()

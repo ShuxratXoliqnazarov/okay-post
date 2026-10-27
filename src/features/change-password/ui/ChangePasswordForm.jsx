@@ -5,7 +5,6 @@ import { userApi } from '@/entities/user'
 import { Alert, Button, Input } from '@/shared/ui'
 import { changePasswordSchema } from '../model/schema'
 
-// Экран 11: старый пароль, новый, новый ещё раз
 export function ChangePasswordForm() {
   const [serverError, setServerError] = useState('')
   const [successMessage, setSuccessMessage] = useState('')

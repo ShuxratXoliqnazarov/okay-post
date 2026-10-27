@@ -8,7 +8,7 @@ import { ROUTES } from '@/shared/config'
 import { cn } from '@/shared/lib'
 import { Avatar, Badge, Container, Logo } from '@/shared/ui'
 
-// Пункты меню ЛК. Посылки и Транзакции — разделы страницы заказов (якоря #parcels, #transactions).
+// посылки и транзакции это якоря на странице заказов
 const NAV_ITEMS = [
   { to: ROUTES.HOME, label: 'Главная', isActive: () => false },
   { to: ROUTES.CABINET_PROFILE, label: 'Профиль', isActive: ({ pathname }) => pathname.startsWith(ROUTES.CABINET_PROFILE) },
@@ -32,7 +32,6 @@ const NAV_ITEMS = [
   },
 ]
 
-// Шапка личного кабинета: логотип, меню с бейджем уведомлений, аватар с именем (бургер на планшете/мобильном)
 export function CabinetHeader() {
   const location = useLocation()
   const user = useUserStore(selectUser)

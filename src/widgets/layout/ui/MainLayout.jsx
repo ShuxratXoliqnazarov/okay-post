@@ -2,7 +2,6 @@ import { Outlet } from 'react-router-dom'
 import { Footer } from '@/widgets/footer'
 import { Header } from '@/widgets/header'
 
-// Обёртка для обычных страниц: шапка + контент + футер
 export function MainLayout() {
   return (
     <div className="flex min-h-screen flex-col">

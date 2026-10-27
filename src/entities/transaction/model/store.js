@@ -1,14 +1,6 @@
 import { create } from 'zustand'
 import { transactionApi } from '../api/transactionApi'
 
-/*
-  Состояние на экране: список, загрузка, ошибка.
-  Сами данные хранятся в фейковой базе (localStorage) — стор только показывает их.
-
-  Использование на странице:
-    const { transactions, isLoading, fetchTransactions } = useTransactionStore()
-    useEffect(() => { fetchTransactions() }, [fetchTransactions])
-*/
 export const useTransactionStore = create((set) => ({
   transactions: [],
   isLoading: false,

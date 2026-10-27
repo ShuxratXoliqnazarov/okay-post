@@ -3,10 +3,9 @@ import { USERS_SEED } from '../model/mock'
 
 const users = createCollection('users', USERS_SEED)
 
-// Пароль никогда не отдаём наружу
+// пароль наружу не отдаем
 const withoutPassword = ({ password: _password, ...user }) => user
 
-// Фейковое API пользователя. Ответы такие же, какие вернул бы настоящий сервер.
 export const userApi = {
   login: async ({ email, password }) => {
     await delay()
@@ -67,7 +66,7 @@ export const userApi = {
     return withoutPassword(users.update(userId, data))
   },
 
-  // delta > 0 — пополнение, delta < 0 — списание
+  // delta может быть и с минусом
   changeBalance: async (delta) => {
     await delay()
     const userId = getCurrentUserId()

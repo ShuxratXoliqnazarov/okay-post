@@ -4,7 +4,7 @@ import { ORDER_STATUS, orderApi } from '@/entities/order'
 import { CheckoutOrderForm } from '@/features/checkout-order'
 import { Alert, PageTitle } from '@/shared/ui'
 
-// Figma: 20_ЛК_Заказы_Оформление заказа. ?id=123 — продолжить сохранённый черновик
+// макет: 20_ЛК_Заказы_Оформление заказа
 export function OrderCheckoutPage() {
   const [searchParams] = useSearchParams()
   const draftId = Number(searchParams.get('id'))

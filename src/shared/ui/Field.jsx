@@ -1,6 +1,5 @@
 import { cn } from '@/shared/lib'
 
-// Подпись над полем + ошибка под ним. required — красная звёздочка как в «Адресной книге».
 export function Field({ label, required, error, className, children }) {
   return (
     <label className={cn('flex flex-col gap-2', className)}>

@@ -9,13 +9,6 @@ import { formatMoney } from '@/shared/lib'
 import { Alert, Button, Input, Modal, Textarea } from '@/shared/ui'
 import { checkoutSchema, EMPTY_ITEM, getShopFromLink, itemsToFormValues } from '../model/schema'
 
-/*
-  Экран 20 «Оформление заказа» — оператор выкупит товары за клиента.
-  Отправить  → окно со списком товаров и суммой → «Подтвердить» → заказ ждёт оплаты
-  Сохранить  → черновик, к нему можно вернуться из таблицы заказов
-  Дублировать → копия последнего товара, Добавить товар → пустой товар
-  order — черновик для редактирования (если открыли «Продолжить»)
-*/
 export function CheckoutOrderForm({ order }) {
   const navigate = useNavigate()
   const { addOrder, updateOrder } = useOrderStore()

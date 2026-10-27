@@ -10,7 +10,6 @@ import {
 import { Tooltip } from '@/shared/ui'
 import { ORDER_STATUS, ORDER_STATUS_LABEL } from '../model/constants'
 
-// Иконка и цвет для каждого статуса (как в колонке «Статус» на экране 17)
 const STATUS_ICON = {
   [ORDER_STATUS.DRAFT]: { Icon: PencilSimpleIcon, color: 'text-muted' },
   [ORDER_STATUS.AWAITING_PAYMENT]: { Icon: CurrencyCircleDollarIcon, color: 'text-warning' },

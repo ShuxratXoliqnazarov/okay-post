@@ -1,19 +1,7 @@
-/*
-  Фейковый бэкенд на localStorage.
-  Каждая коллекция (users, orders, parcels...) хранится под ключом "okeypost-db-v<версия>-<name>".
-  При первом запуске коллекция заполняется стартовыми данными (seed) из entities/<name>/model/mock.js.
-
-  Посмотреть/почистить данные: DevTools → Application → Local Storage.
-  Сбросить всё к стартовым данным: удалить ключи okeypost-* и обновить страницу.
-
-  Когда появится настоящий сервер — меняем только entities/<name>/api/*.js на request(),
-  страницы и компоненты трогать не нужно.
-*/
-
-// Имитация задержки сети, чтобы были видны состояния загрузки
+// задержка как будто сеть
 export const delay = (ms = 400) => new Promise((resolve) => setTimeout(resolve, ms))
 
-// Поменяли структуру mock-данных — увеличь версию, и у всех данные перезальются заново
+// поменял моки - подними версию, данные перезальются
 const DB_VERSION = 2
 
 export function createCollection(name, seed = []) {
@@ -25,7 +13,7 @@ export function createCollection(name, seed = []) {
       try {
         return JSON.parse(raw)
       } catch {
-        // Битые данные — перезаписываем стартовыми
+        // json битый - берем заново из моков
       }
     }
     localStorage.setItem(key, JSON.stringify(seed))

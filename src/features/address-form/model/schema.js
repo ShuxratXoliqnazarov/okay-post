@@ -1,7 +1,6 @@
 import { z } from 'zod'
 import { nameField, phoneField, requiredString, zipField } from '@/shared/lib'
 
-// Все поля обязательные (красные звёздочки на экране 24)
 export const addressSchema = z.object({
   lastName: nameField,
   firstName: nameField,
@@ -30,7 +29,6 @@ export const EMPTY_ADDRESS = {
   phone: '+992',
 }
 
-// Порядок полей как в макете: 3 колонки
 export const ADDRESS_FIELDS = [
   { name: 'lastName', label: 'Фамилия', autoComplete: 'family-name' },
   { name: 'firstName', label: 'Имя', autoComplete: 'given-name' },

@@ -1,9 +1,7 @@
-// Форматирование данных для вывода в UI
-
 // '2026-10-01T10:00:00.000Z' -> '01.10.2026'
 export const formatDate = (iso) => (iso ? new Date(iso).toLocaleDateString('ru-RU') : '—')
 
-// '2026-10-01T10:00:00.000Z' -> '1 октября'
+// -> '1 октября'
 export const formatDayMonth = (iso) =>
   new Date(iso).toLocaleDateString('ru-RU', { day: 'numeric', month: 'long' })
 

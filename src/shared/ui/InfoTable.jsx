@@ -1,9 +1,5 @@
 import { cn } from '@/shared/lib'
 
-/*
-  Таблица-зебра «подпись — значение» (виртуальный адрес, реквизиты для оплаты).
-    <InfoTable rows={[{ label: 'Postcode:', value: 'E10 7QZ' }]} />
-*/
 export function InfoTable({ rows, className }) {
   return (
     <dl className={cn('flex flex-col', className)}>

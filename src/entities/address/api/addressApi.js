@@ -3,7 +3,6 @@ import { ADDRESSES_SEED } from '../model/mock'
 
 const addresses = createCollection('addresses', ADDRESSES_SEED)
 
-// Фейковое API: адреса текущего пользователя (новые — сверху)
 export const addressApi = {
   getAll: async () => {
     await delay()

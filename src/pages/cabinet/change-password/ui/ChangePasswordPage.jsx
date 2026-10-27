@@ -2,7 +2,7 @@ import { getFullName, selectUser, useUserStore } from '@/entities/user'
 import { ChangePasswordForm } from '@/features/change-password'
 import { Avatar, Card } from '@/shared/ui'
 
-// Figma: 11_ЛК_Профиль_Изменить пароль
+// макет: 11_ЛК_Профиль_Изменить пароль
 export function ChangePasswordPage() {
   const user = useUserStore(selectUser)
 

@@ -1,6 +1,6 @@
 import { Container } from './Container'
 
-// Временная заглушка страницы. Удали её из страницы, когда начнёшь верстать по Figma.
+// заглушка, удалить когда сверстаешь
 export function PageStub({ title, figma }) {
   return (
     <Container className="py-10">

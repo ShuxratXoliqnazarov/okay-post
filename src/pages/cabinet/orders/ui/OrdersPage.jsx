@@ -7,8 +7,7 @@ import { OrdersSection } from '@/widgets/orders-section'
 import { ParcelsSection } from '@/widgets/parcels-section'
 import { TransactionsSection } from '@/widgets/transactions-section'
 
-// Figma: 17_ЛК_Заказы, 18_ЛК_Заказы_фильтр, 18_ЛК_Заказы_оплата (модалка)
-// Три раздела на одной странице; меню «Посылки»/«Транзакции» ведёт сюда с якорем #parcels / #transactions
+// макет: 17_ЛК_Заказы, 18_ЛК_Заказы_фильтр, 18_ЛК_Заказы_оплата
 export function OrdersPage() {
   const { hash } = useLocation()
   const fetchOrders = useOrderStore((state) => state.fetchOrders)
@@ -21,7 +20,7 @@ export function OrdersPage() {
     fetchTransactions()
   }, [fetchOrders, fetchParcels, fetchTransactions])
 
-  // React Router сам не прокручивает к якорю — делаем это вручную
+  // роутер сам не скроллит к якорю
   useEffect(() => {
     if (hash) document.querySelector(hash)?.scrollIntoView({ behavior: 'smooth' })
     else window.scrollTo({ top: 0 })

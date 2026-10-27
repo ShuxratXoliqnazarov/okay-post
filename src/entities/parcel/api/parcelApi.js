@@ -3,7 +3,6 @@ import { PARCELS_SEED } from '../model/mock'
 
 const parcels = createCollection('parcels', PARCELS_SEED)
 
-// Фейковое API: посылки текущего пользователя (новые — сверху)
 export const parcelApi = {
   getAll: async () => {
     await delay()

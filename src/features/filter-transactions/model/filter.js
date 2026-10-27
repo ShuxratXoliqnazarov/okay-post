@@ -4,7 +4,7 @@ export const transactionsFilterSchema = z
   .object({
     from: z.string(),
     to: z.string(),
-    type: z.string(), // '' — все транзакции
+    type: z.string(), // '' = все
   })
   .refine((data) => !data.from || !data.to || data.from <= data.to, {
     message: 'Конец периода раньше начала',

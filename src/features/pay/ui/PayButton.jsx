@@ -15,12 +15,6 @@ import { createPaymentSchema } from '../model/schema'
 
 const CONTACT_EMAIL = 'info@okeypost.com'
 
-/*
-  Кнопка «Оплатить» + модалка «Выберите метод оплаты» (экран 18).
-  После оплаты создаёт транзакцию (или проводит уже существующую — transactionId) и вызывает onPaid.
-
-    <PayButton amount={22.5} description="Оплата за посылку ID 201" onPaid={() => updateParcel(...)} />
-*/
 export function PayButton({ amount, description, transactionId, onPaid, children = 'Оплатить' }) {
   const [isOpen, setIsOpen] = useState(false)
   const user = useUserStore(selectUser)

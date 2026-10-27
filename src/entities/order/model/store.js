@@ -1,14 +1,6 @@
 import { create } from 'zustand'
 import { orderApi } from '../api/orderApi'
 
-/*
-  Состояние на экране: список, загрузка, ошибка.
-  Сами данные хранятся в фейковой базе (localStorage) — стор только показывает их.
-
-  Использование на странице:
-    const { orders, isLoading, fetchOrders } = useOrderStore()
-    useEffect(() => { fetchOrders() }, [fetchOrders])
-*/
 export const useOrderStore = create((set) => ({
   orders: [],
   isLoading: false,

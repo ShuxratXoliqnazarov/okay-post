@@ -1,6 +1,5 @@
 import { cn } from '@/shared/lib'
 
-// <Radio value="card" {...register('method')}>Visa / Mastercard</Radio>
 export function Radio({ className, children, ref, ...props }) {
   return (
     <label className={cn('flex cursor-pointer items-start gap-3 text-sm text-dark', className)}>

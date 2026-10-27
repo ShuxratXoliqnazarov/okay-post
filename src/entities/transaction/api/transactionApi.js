@@ -3,7 +3,6 @@ import { TRANSACTIONS_SEED } from '../model/mock'
 
 const transactions = createCollection('transactions', TRANSACTIONS_SEED)
 
-// Фейковое API: транзакции текущего пользователя (новые — сверху)
 export const transactionApi = {
   getAll: async () => {
     await delay()

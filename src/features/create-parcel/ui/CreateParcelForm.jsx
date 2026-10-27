@@ -12,11 +12,6 @@ import { createParcelSchema } from '../model/schema'
 
 const Divider = () => <hr className="my-10 border-line" />
 
-/*
-  Экран 22 «Создание посылки».
-  orders — заказы, пришедшие на склад (их можно упаковать), addresses — адресная книга.
-  После отправки: посылка «Запрос отправлен», выбранные заказы — «Упакован в посылку».
-*/
 export function CreateParcelForm({ orders, addresses }) {
   const navigate = useNavigate()
   const addParcel = useParcelStore((state) => state.addParcel)
@@ -48,7 +43,7 @@ export function CreateParcelForm({ orders, addresses }) {
         actualWeight: selectedOrders.reduce((sum, order) => sum + order.weight, 0),
         dimensions: '',
         totalWeight: null,
-        cost: null, // склад посчитает после упаковки
+        cost: null, // посчитает склад
         status: PARCEL_STATUS.REQUESTED,
       })
       await Promise.all(selectedOrders.map((order) => updateOrder(order.id, { status: ORDER_STATUS.PACKED })))

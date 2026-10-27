@@ -1,9 +1,5 @@
 import { cn } from '@/shared/lib'
 
-/*
-  Вкладки с зелёным подчёркиванием активной.
-    <Tabs tabs={[{ value: 'all', label: 'Все' }]} value={tab} onChange={setTab} />
-*/
 export function Tabs({ tabs, value, onChange, size = 'lg', className }) {
   return (
     <div className={cn('flex overflow-x-auto border-b border-dark/40', className)} role="tablist">

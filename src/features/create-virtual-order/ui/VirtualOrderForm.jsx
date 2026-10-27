@@ -7,7 +7,6 @@ import { ROUTES } from '@/shared/config'
 import { Alert, Button, Input } from '@/shared/ui'
 import { virtualOrderSchema } from '../model/schema'
 
-// Экран 19: заказ, который клиент выкупил сам и прислал трек-номер
 export function VirtualOrderForm() {
   const navigate = useNavigate()
   const addOrder = useOrderStore((state) => state.addOrder)
