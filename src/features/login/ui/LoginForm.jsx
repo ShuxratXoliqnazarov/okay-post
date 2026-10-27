@@ -1,14 +1,15 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useUserStore, userApi } from '@/entities/user'
 import { ROUTES } from '@/shared/config'
-import { Button, Input } from '@/shared/ui'
+import { Alert, Button, Input } from '@/shared/ui'
 import { loginSchema } from '../model/schema'
 
 export function LoginForm() {
   const navigate = useNavigate()
+  const location = useLocation()
   const setAuth = useUserStore((state) => state.setAuth)
   const [serverError, setServerError] = useState('')
 
@@ -18,7 +19,8 @@ export function LoginForm() {
     formState: { errors, isSubmitting },
   } = useForm({
     resolver: zodResolver(loginSchema),
-    defaultValues: { phone: '+998', password: '' },
+    mode: 'onTouched',
+    defaultValues: { email: '', password: '' },
   })
 
   const onSubmit = async (data) => {
@@ -26,22 +28,35 @@ export function LoginForm() {
       setServerError('')
       const response = await userApi.login(data)
       setAuth(response)
-      navigate(ROUTES.PROFILE)
+      // Вернуть туда, откуда отправил ProtectedRoute, иначе — в профиль
+      navigate(location.state?.from?.pathname ?? ROUTES.CABINET_PROFILE, { replace: true })
     } catch (error) {
       setServerError(error.message)
     }
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
-      <Input label="Телефон" {...register('phone')} error={errors.phone?.message} />
+    <form onSubmit={handleSubmit(onSubmit)} noValidate className="flex flex-col gap-4">
+      <Input
+        label="Email"
+        type="email"
+        autoComplete="email"
+        {...register('email')}
+        error={errors.email?.message}
+      />
       <Input
         label="Пароль"
         type="password"
+        autoComplete="current-password"
         {...register('password')}
         error={errors.password?.message}
       />
-      {serverError && <p className="text-sm text-danger">{serverError}</p>}
+      <Link to={ROUTES.FORGOT_PASSWORD} className="self-end text-sm text-primary hover:underline">
+        Забыли пароль?
+      </Link>
+
+      <Alert variant="error">{serverError}</Alert>
+
       <Button type="submit" disabled={isSubmitting}>
         {isSubmitting ? 'Вход...' : 'Войти'}
       </Button>

@@ -3,11 +3,15 @@ import { selectIsAuth, useUserStore } from '@/entities/user'
 import { LogoutButton } from '@/features/logout'
 import { ROUTES } from '@/shared/config'
 import { cn } from '@/shared/lib'
-import { Container } from '@/shared/ui'
+import { Container, Logo } from '@/shared/ui'
 
 const navLinks = [
-  { to: ROUTES.HOME, label: 'Главная' },
-  { to: ROUTES.TRACKING, label: 'Отследить' },
+  { to: ROUTES.HOW_TO_BUY, label: 'Как покупать' },
+  { to: ROUTES.SALES, label: 'Распродажи' },
+  { to: ROUTES.PRICES, label: 'Цены' },
+  { to: ROUTES.SHOPS, label: 'Магазины' },
+  { to: ROUTES.BLOG, label: 'Блог' },
+  { to: ROUTES.FAQ, label: 'FAQ' },
 ]
 
 export function Header() {
@@ -16,9 +20,7 @@ export function Header() {
   return (
     <header className="border-b border-gray-200 bg-white">
       <Container className="flex h-16 items-center justify-between">
-        <Link to={ROUTES.HOME} className="text-xl font-bold text-primary">
-          Okey Post
-        </Link>
+        <Logo />
 
         <nav className="flex items-center gap-6">
           {navLinks.map(({ to, label }) => (
@@ -34,8 +36,8 @@ export function Header() {
 
         {isAuth ? (
           <div className="flex items-center gap-3">
-            <Link to={ROUTES.PROFILE} className="hover:text-primary">
-              Профиль
+            <Link to={ROUTES.CABINET_PROFILE} className="hover:text-primary">
+              Личный кабинет
             </Link>
             <LogoutButton />
           </div>

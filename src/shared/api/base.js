@@ -1,9 +1,10 @@
 import { API_URL } from '@/shared/config'
+import { getToken } from './session'
 
 // Базовый клиент для запросов к бэкенду.
 // Используется только в слоях entities/*/api и features/*/api.
 export async function request(endpoint, { method = 'GET', body, headers } = {}) {
-  const token = localStorage.getItem('token')
+  const token = getToken()
 
   const response = await fetch(`${API_URL}${endpoint}`, {
     method,

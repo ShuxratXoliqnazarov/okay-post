@@ -1,20 +1,19 @@
 import { cn } from '@/shared/lib'
+import { Field } from './Field'
+import { fieldClasses } from './fieldClasses'
 
-// Работает с react-hook-form: <Input {...register('phone')} error={errors.phone?.message} />
-export function Input({ label, error, className, ref, ...props }) {
+// Работает с react-hook-form: <Input label="Имя:" {...register('name')} error={errors.name?.message} />
+export function Input({ label, required, error, icon, className, ref, ...props }) {
   return (
-    <label className="flex flex-col gap-1.5">
-      {label && <span className="text-sm font-medium text-dark">{label}</span>}
-      <input
-        ref={ref}
-        className={cn(
-          'rounded-xl border px-4 py-3 outline-none transition-colors focus:border-primary',
-          error ? 'border-danger' : 'border-gray-300',
-          className,
+    <Field label={label} required={required} error={error} className={className}>
+      <span className="relative block">
+        <input ref={ref} className={cn(fieldClasses(error), 'h-[45px]', icon && 'pr-11')} {...props} />
+        {icon && (
+          <span className="pointer-events-none absolute top-1/2 right-4 -translate-y-1/2 text-primary">
+            {icon}
+          </span>
         )}
-        {...props}
-      />
-      {error && <span className="text-sm text-danger">{error}</span>}
-    </label>
+      </span>
+    </Field>
   )
 }

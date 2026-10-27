@@ -1,4 +1,12 @@
+// Публичный API слайса: import { useParcelStore } from '@/entities/parcel'
 export { useParcelStore } from './model/store'
-export { PARCEL_STATUS, PARCEL_STATUS_LABEL } from './model/constants'
 export { parcelApi } from './api/parcelApi'
-export { ParcelCard } from './ui/ParcelCard'
+export {
+  PARCEL_STATUS,
+  PARCEL_STATUS_LABEL,
+  DELIVERY_METHODS,
+  PARCEL_SERVICES,
+  getDeliveryLabel,
+  getServiceLabel,
+} from './model/constants'
+export { ParcelStatusIcon } from './ui/ParcelStatusIcon'

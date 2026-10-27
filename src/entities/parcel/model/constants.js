@@ -1,12 +1,41 @@
-// Статусы посылки и их подписи для UI
+// Статусы посылки (по тексту «Информация по работе с сайтом»)
 export const PARCEL_STATUS = {
-  CREATED: 'created',
-  IN_TRANSIT: 'in_transit',
-  DELIVERED: 'delivered',
+  REQUESTED: 'requested', // клиент отправил запрос на формирование
+  PROCESSING: 'processing', // склад собирает и упаковывает
+  AWAITING_PAYMENT: 'awaiting_payment', // упакована, ждёт оплаты и декларации
+  FORMED: 'formed', // оплачена, сформирована
+  SENT: 'sent', // отправлена со склада с трек-номером
 }
 
 export const PARCEL_STATUS_LABEL = {
-  [PARCEL_STATUS.CREATED]: 'Создана',
-  [PARCEL_STATUS.IN_TRANSIT]: 'В пути',
-  [PARCEL_STATUS.DELIVERED]: 'Доставлена',
+  [PARCEL_STATUS.REQUESTED]: 'Запрос отправлен',
+  [PARCEL_STATUS.PROCESSING]: 'В обработке',
+  [PARCEL_STATUS.AWAITING_PAYMENT]: 'Ожидает оплаты и заполнения декларации',
+  [PARCEL_STATUS.FORMED]: 'Сформирована',
+  [PARCEL_STATUS.SENT]: 'Отправлена',
 }
+
+// «Выберите тип» на экране 22 — уточнить список у заказчика
+export const DELIVERY_METHODS = [
+  { value: 'russian-post', label: 'Почта России' },
+  { value: 'dhl', label: 'DHL Express' },
+  { value: 'ems', label: 'EMS' },
+  { value: 'superfast', label: 'Суперфаст' },
+  { value: 'fastbox', label: 'Фастбокс' },
+]
+
+// Чекбоксы доп. услуг на экране 22
+export const PARCEL_SERVICES = [
+  { value: 'consolidation', label: 'Консолидация' },
+  { value: 'remove-invoice', label: 'Удаление инвойса' },
+  { value: 'extra-packing', label: 'Дополнительная упаковка' },
+  { value: 'fragile-packing', label: 'Упаковка хрупких предметов' },
+  { value: 'declaration', label: 'Заполнение декларации' },
+  { value: 'split-order', label: 'Разделение заказа' },
+]
+
+export const getDeliveryLabel = (value) =>
+  DELIVERY_METHODS.find((method) => method.value === value)?.label ?? value
+
+export const getServiceLabel = (value) =>
+  PARCEL_SERVICES.find((service) => service.value === value)?.label ?? value

@@ -1,16 +1,36 @@
 @import "tailwindcss";
 
 /*
-  Дизайн-токены проекта (цвета, шрифты) — брать из Figma.
-  После объявления доступны как классы: bg-primary, text-dark, text-danger и т.д.
+  Дизайн-токены из Figma. После объявления доступны как классы:
+  bg-primary, text-dark, border-line, bg-surface, shadow-card и т.д.
+
+  Шрифт в макете — Gilroy (платный). Если у команды есть файлы шрифта —
+  положить в src/shared/assets/fonts и подключить через @font-face ниже.
+  Пока работает запасной Manrope из Google Fonts (index.html).
 */
 @theme {
-  --color-primary: #ff6b00;
-  --color-primary-dark: #e05e00;
-  --color-dark: #1a1a1a;
-  --color-danger: #e53935;
+  --color-primary: #00c97b;
+  --color-primary-light: #00d981;
+  --color-primary-dark: #00a866;
+  --color-indigo: #5b52a3;
+  --color-accent: #41b7e9;
+  --color-dark: #1f2428;
+  --color-muted: #6c7480;
+  --color-line: #d8dee8;
+  --color-surface: #f4f7fa;
+  --color-field: #fafbfd;
+  --color-warning: #ffa009;
+  --color-danger: #f0506e;
+  --color-purple: #b36cf5;
 
-  --font-sans: "Inter", system-ui, sans-serif;
+  --font-sans: "Gilroy", "Manrope", system-ui, sans-serif;
+
+  --shadow-card: 0 10px 40px rgb(31 36 40 / 0.07);
+  --shadow-button: 0 8px 20px rgb(0 201 123 / 0.3);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {

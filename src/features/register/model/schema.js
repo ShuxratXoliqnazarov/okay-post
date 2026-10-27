@@ -1,14 +1,14 @@
 import { z } from 'zod'
+import { emailField, nameField, passwordField, phoneField } from '@/shared/lib'
 
 export const registerSchema = z
   .object({
-    name: z.string().min(2, 'Минимум 2 символа'),
-    phone: z
-      .string()
-      .min(1, 'Введите номер телефона')
-      .regex(/^\+998\d{9}$/, 'Формат: +998XXXXXXXXX'),
-    password: z.string().min(6, 'Минимум 6 символов'),
-    confirmPassword: z.string(),
+    name: nameField,
+    phone: phoneField,
+    email: emailField,
+    password: passwordField,
+    confirmPassword: z.string().min(1, 'Повторите пароль'),
+    agree: z.boolean().refine((value) => value, 'Необходимо согласие с условиями'),
   })
   .refine((data) => data.password === data.confirmPassword, {
     message: 'Пароли не совпадают',
