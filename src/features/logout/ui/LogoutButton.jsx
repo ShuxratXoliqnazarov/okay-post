@@ -3,7 +3,7 @@ import { useUserStore } from '@/entities/user'
 import { ROUTES } from '@/shared/config'
 import { Button } from '@/shared/ui'
 
-export function LogoutButton() {
+export function LogoutButton({ className }) {
   const navigate = useNavigate()
   const logout = useUserStore((state) => state.logout)
 
@@ -13,7 +13,7 @@ export function LogoutButton() {
   }
 
   return (
-    <Button variant="ghost" onClick={handleLogout}>
+    <Button variant="ghost" className={className} onClick={handleLogout}>
       Выйти
     </Button>
   )

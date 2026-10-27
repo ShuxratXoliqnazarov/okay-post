@@ -1,10 +1,8 @@
 import { z } from 'zod'
+import { emailField, requiredString } from '@/shared/lib'
 
-// Схема валидации формы входа
+// Во входе пароль проверяем только на заполненность — правила сложности есть в регистрации
 export const loginSchema = z.object({
-  phone: z
-    .string()
-    .min(1, 'Введите номер телефона')
-    .regex(/^\+998\d{9}$/, 'Формат: +998XXXXXXXXX'),
-  password: z.string().min(6, 'Минимум 6 символов'),
+  email: emailField,
+  password: requiredString('Введите пароль'),
 })

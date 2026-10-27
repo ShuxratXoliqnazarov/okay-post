@@ -1,9 +1,53 @@
 // Все пути приложения в одном месте.
 // Никогда не пиши пути строкой в компонентах — бери отсюда: ROUTES.LOGIN
+// Пути с параметрами собирай через функции ниже: getAdminOrderEditPath(5) -> '/admin/orders/5'
 export const ROUTES = {
+  // Публичные страницы сайта
   HOME: '/',
+  HOW_TO_BUY: '/how-to-buy',
+  SALES: '/sales',
+  PRICES: '/prices',
+  FAQ: '/faq',
+  PARTNERS: '/partners',
+  BLOG: '/blog',
+  SHOPS: '/shops',
+
+  // Авторизация (в Figma — попапы на главной)
   LOGIN: '/login',
   REGISTER: '/register',
-  TRACKING: '/tracking',
-  PROFILE: '/profile',
+  FORGOT_PASSWORD: '/forgot-password',
+
+  // Личный кабинет (только для авторизованных)
+  CABINET: '/cabinet',
+  CABINET_PROFILE: '/cabinet/profile',
+  CABINET_PROFILE_EDIT: '/cabinet/profile/edit',
+  CABINET_CHANGE_PASSWORD: '/cabinet/profile/password',
+  CABINET_ORDERS: '/cabinet/orders',
+  CABINET_PARCELS: '/cabinet/orders#parcels', // раздел на странице заказов, не отдельный Route
+  CABINET_TRANSACTIONS: '/cabinet/orders#transactions', // раздел на странице заказов, не отдельный Route
+  CABINET_VIRTUAL_ORDER: '/cabinet/orders/virtual',
+  CABINET_ORDER_CHECKOUT: '/cabinet/orders/checkout',
+  CABINET_CREATE_PARCEL: '/cabinet/parcels/new',
+  CABINET_ADDRESS_BOOK: '/cabinet/address-book',
+  CABINET_NOTIFICATIONS: '/cabinet/notifications',
+
+  // Админ-панель (только для role === 'admin')
+  ADMIN: '/admin',
+  ADMIN_LOGIN: '/admin/login',
+  ADMIN_ORDERS: '/admin/orders',
+  ADMIN_ORDER_EDIT: '/admin/orders/:id',
+  ADMIN_PARCELS: '/admin/parcels',
+  ADMIN_BARCODE: '/admin/barcode',
+  ADMIN_USERS: '/admin/users',
+  ADMIN_USER_EDIT: '/admin/users/:id',
+  ADMIN_TRANSACTIONS: '/admin/transactions',
+  ADMIN_PAGE_EDITOR: '/admin/page-editor',
+  ADMIN_COMPANY_EXPENSES: '/admin/company-expenses',
+  ADMIN_SALARY_EXPENSES: '/admin/salary-expenses',
+  ADMIN_SETTINGS: '/admin/settings',
 }
+
+export const getOrderCheckoutEditPath = (id) => `/cabinet/orders/checkout?id=${id}`
+export const getProfileTabPath = (tab) => `/cabinet/profile?tab=${tab}`
+export const getAdminOrderEditPath = (id) => `/admin/orders/${id}`
+export const getAdminUserEditPath = (id) => `/admin/users/${id}`
