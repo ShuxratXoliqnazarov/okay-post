@@ -1,4 +1,5 @@
 export { cn } from './cn'
+export { featherMaskStyle } from './featherMask'
 export { formatDate, formatDayMonth, formatMoney, formatWeight, pluralize } from './format'
 export { useSort } from './useSort'
 export { readFileAsDataUrl, downloadTextFile } from './file'
